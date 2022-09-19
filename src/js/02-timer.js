@@ -1,7 +1,5 @@
 import flatpickr from 'flatpickr';
-// Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const flatpickr = require('flatpickr');
@@ -14,8 +12,6 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-
     selectedDate = new Date(selectedDates[0]).getTime();
   },
 };
@@ -27,7 +23,6 @@ function onStart() {
     selectedDate = selectedDate - now;
     let rez = convertMs(selectedDate);
     setTime(rez);
-    console.log(rez);
     timerID = setInterval(minus, 1000);
     button.setAttribute('disabled', 'disabled');
   }
@@ -37,7 +32,6 @@ button.addEventListener('click', onStart);
 
 function minus() {
   selectedDate = selectedDate - 1000;
-  console.log(selectedDate);
   if (selectedDate < 0) {
     Notify.success('time is over');
     clearInterval(timerID);
@@ -45,7 +39,6 @@ function minus() {
   } else {
     let rez = convertMs(selectedDate);
     setTime(rez);
-    console.log(rez);
   }
 }
 function setTime(rez) {
