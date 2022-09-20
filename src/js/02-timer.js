@@ -45,16 +45,32 @@ function setTime(rez) {
   let fields = document.querySelectorAll('.value');
   fields.forEach(field => {
     if (field.dataset.days === '') {
-      field.innerHTML = rez.days;
+      let rezultd = rez.days;
+      if (parseInt(rez.days) < 10) {
+        rezultd = `0${rez.days}`;
+      }
+      field.innerHTML = rezultd;
     }
-    if (field.dataset.hours == '') {
-      field.innerHTML = rez.hours;
+    if (field.dataset.hours === '') {
+      let rezulth = rez.hours;
+      if (parseInt(rez.hours) < 10) {
+        rezulth = `0${rez.hours}`;
+      }
+      field.innerHTML = rezulth;
     }
-    if (field.dataset.minutes == '') {
-      field.innerHTML = rez.minutes;
+    if (field.dataset.minutes === '') {
+      let rezultm = rez.minutes;
+      if (parseInt(rez.minutes) < 10) {
+        rezultm = `0${rez.minutes}`;
+      }
+      field.innerHTML = rezultm;
     }
-    if (field.dataset.seconds == '') {
-      field.innerHTML = rez.seconds;
+    if (field.dataset.seconds === '') {
+      let rezults = rez.seconds;
+      if (parseInt(rez.seconds) < 10) {
+        rezults = `0${rez.seconds}`;
+      }
+      field.innerHTML = rezults;
     }
   });
 }
