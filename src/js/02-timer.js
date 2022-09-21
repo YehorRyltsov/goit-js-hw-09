@@ -2,7 +2,6 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const flatpickr = require('flatpickr');
 let selectedDate = '';
 const button = document.querySelector('button');
 let timerID = 0;
