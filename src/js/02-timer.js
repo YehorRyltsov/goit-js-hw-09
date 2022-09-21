@@ -40,36 +40,29 @@ function minus() {
     setTime(rez);
   }
 }
+function pad(num, size) {
+  num = num.toString();
+  while (num.length < size) num = '0' + num;
+  return num;
+}
 function setTime(rez) {
   let fields = document.querySelectorAll('.value');
   fields.forEach(field => {
     if (field.dataset.days === '') {
       let rezultd = rez.days;
-      if (parseInt(rez.days) < 10) {
-        rezultd = `0${rez.days}`;
-      }
-      field.innerHTML = rezultd;
+      field.innerHTML = String(rezultd).padStart(2, '0');
     }
     if (field.dataset.hours === '') {
       let rezulth = rez.hours;
-      if (parseInt(rez.hours) < 10) {
-        rezulth = `0${rez.hours}`;
-      }
-      field.innerHTML = rezulth;
+      field.innerHTML = String(rezulth).padStart(2, '0');
     }
     if (field.dataset.minutes === '') {
       let rezultm = rez.minutes;
-      if (parseInt(rez.minutes) < 10) {
-        rezultm = `0${rez.minutes}`;
-      }
-      field.innerHTML = rezultm;
+      field.innerHTML = String(rezultm).padStart(2, '0');
     }
     if (field.dataset.seconds === '') {
       let rezults = rez.seconds;
-      if (parseInt(rez.seconds) < 10) {
-        rezults = `0${rez.seconds}`;
-      }
-      field.innerHTML = rezults;
+      field.innerHTML = String(rezults).padStart(2, '0');
     }
   });
 }
