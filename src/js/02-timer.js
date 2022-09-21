@@ -49,20 +49,16 @@ function setTime(rez) {
   let fields = document.querySelectorAll('.value');
   fields.forEach(field => {
     if (field.dataset.days === '') {
-      let rezultd = rez.days;
-      field.innerHTML = String(rezultd).padStart(2, '0');
+      field.innerHTML = String(rez.days).padStart(2, '0');
     }
     if (field.dataset.hours === '') {
-      let rezulth = rez.hours;
-      field.innerHTML = String(rezulth).padStart(2, '0');
+      field.innerHTML = String(rez.hours).padStart(2, '0');
     }
     if (field.dataset.minutes === '') {
-      let rezultm = rez.minutes;
-      field.innerHTML = String(rezultm).padStart(2, '0');
+      field.innerHTML = String(rez.minutes).padStart(2, '0');
     }
     if (field.dataset.seconds === '') {
-      let rezults = rez.seconds;
-      field.innerHTML = String(rezults).padStart(2, '0');
+      field.innerHTML = String(rez.seconds).padStart(2, '0');
     }
   });
 }
